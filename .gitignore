@@ -1,0 +1,37 @@
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Local Database & Live Booking Records
+bookings.json
+bookings.csv
+!bookings.example.json
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python runtime
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# Cloudflare & Wrangler
+.wrangler/
+dist/
+build/
+
+# Archives & Binaries
+*.zip
+*.tar.gz
+
+# IDEs
+.vscode/
+.idea/

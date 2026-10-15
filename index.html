@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siam Lotus | Haute Traditionelle Thaimassage & Wellness Sanctuary Berlin</title>
+    <meta name="description" content="Authentische traditionelle Thaimassage in Berlin-Mitte. Exklusive Suiten auf thailändischer Seide, Wat-Pho-zertifizierte Meisterinnen und 24/7 Concierge-Terminbuchung.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cinzel: ['"Cinzel"', 'serif'],
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        royal: {
+                            950: '#12021b',
+                            900: '#1a0326',
+                            800: '#2d083e',
+                            700: '#440e5b',
+                            600: '#631484',
+                            500: '#8324a8',
+                            400: '#a33ecd',
+                        },
+                        gold: {
+                            50: '#fbf8ed',
+                            100: '#f6eed2',
+                            200: '#eedda7',
+                            300: '#e5c775',
+                            400: '#dfb54d',
+                            500: '#d4af37', // Authentic Royal Gold Leaf
+                            600: '#b89128',
+                            700: '#926e1e',
+                            800: '#76561d',
+                            900: '#63471c',
+                        },
+                        silk: {
+                            cream: '#faf7f2',
+                            pearl: '#f3ece4',
+                            sand: '#e8dccf',
+                            dusk: '#281a2e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans bg-[#faf7f2] text-[#281a2e] antialiased selection:bg-[#440e5b] selection:text-[#f5d77f]">
+
+    <!-- Top Haute Concierge Bar -->
+    <div class="bg-[#12021b] text-[#ecd089] text-[11px] py-2.5 px-4 border-b border-[#d4af37]/25 tracking-wide">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-1.5 opacity-90">
+                    <span class="text-gold-500">📍</span> Friedrichstraße 185, 10117 Berlin-Mitte
+                </span>
+                <span class="hidden md:inline-flex items-center gap-1.5 opacity-80">
+                    <span class="text-gold-500">🕒</span> Mo – Sa: 10:00 – 20:00 Uhr | So: 11:00 – 18:00 Uhr
+                </span>
+            </div>
+            <div class="flex items-center gap-5">
+                <span class="hidden lg:inline text-gold-300 font-light tracking-wider">
+                    ✨ Einzigartige Ruheoase auf traditioneller thailändischer Seide
+                </span>
+                <div class="flex items-center gap-2 pl-3 border-l border-[#d4af37]/30 text-[11px] font-medium">
+                    <button onclick="window.setChatLanguage('de')" class="hover:text-white transition text-gold-300 font-bold">DE</button>
+                    <span class="text-stone-600">|</span>
+                    <button onclick="window.setChatLanguage('en')" class="hover:text-white transition text-stone-400">EN</button>
+                    <span class="text-stone-600">|</span>
+                    <button onclick="window.setChatLanguage('th')" class="hover:text-white transition text-stone-400">TH</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-[#1a0326]/95 backdrop-blur-md border-b border-[#d4af37]/30 transition-all shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            
+            <!-- Brand Logo with Thai Lotus Emblem -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-[#12021b] via-[#440e5b] to-[#631484] flex items-center justify-center border border-[#d4af37]/60 shadow-[0_0_15px_rgba(212,175,55,0.25)] group-hover:scale-105 transition-transform duration-300">
+                    <!-- Delicate Gold Lotus SVG -->
+                    <svg class="w-6 h-6 text-[#f5d77f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3c-1.5 3-4 6-4 9a4 4 0 0 0 8 0c0-3-2.5-6-4-9z"/>
+                        <path d="M12 12c-2.5-2-6-3-8-1 0 4 3 7 8 7"/>
+                        <path d="M12 12c2.5-2 6-3 8-1 0 4-3 7-8 7"/>
+                        <circle cx="12" cy="18" r="1" fill="#d4af37"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-cinzel text-xl sm:text-2xl font-bold tracking-[0.18em] text-[#f5d77f] block leading-tight">SIAM LOTUS</span>
+                    <span class="text-[9px] tracking-[0.28em] uppercase font-light text-purple-200 block">Haute Tradition & Wellness • Berlin</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-9 text-xs uppercase tracking-[0.2em] font-medium text-purple-100">
+                <a href="#zeremonien" class="hover:text-gold-400 transition-colors py-1 relative group">
+                    Zeremonien & Preise
+                    <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#philosophie" class="hover:text-gold-400 transition-colors py-1 relative group">
+                    Die Kunst der Seide
+                    <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#erlebnis" class="hover:text-gold-400 transition-colors py-1 relative group">
+                    Das Heil-Ritual
+                    <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#kontakt" class="hover:text-gold-400 transition-colors py-1 relative group">
+                    Lage & Salon
+                    <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+
+            <!-- Header Action Button -->
+            <div class="flex items-center gap-4">
+                <a href="tel:+493012345678" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-purple-200 hover:text-gold-300 transition tracking-wider">
+                    <span>📞 030 1234 5678</span>
+                </a>
+                <button onclick="window.openBookingModal('trad-thai')" class="px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#440e5b] via-[#631484] to-[#440e5b] hover:from-[#631484] hover:to-[#8324a8] text-[#f5d77f] text-xs font-semibold tracking-wider uppercase border border-[#d4af37]/60 shadow-[0_4px_16px_rgba(68,14,91,0.5)] hover:shadow-[0_4px_24px_rgba(212,175,55,0.4)] transition-all duration-300 flex items-center gap-2 group active:scale-95">
+                    <span>Termin buchen</span>
+                    <span class="text-gold-300 group-hover:translate-x-1 transition-transform">→</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Royal Thai Silk Luxury) -->
+    <section class="relative bg-thai-silk-dark text-white py-24 sm:py-32 overflow-hidden border-b border-[#d4af37]/30">
+        <!-- Ambient Silk Glow Overlays -->
+        <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#631484]/30 blur-[100px] pointer-events-none"></div>
+        <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#d4af37]/15 blur-[120px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Hero Editorial Column -->
+                <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+                    
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#2d083e]/80 border border-[#d4af37]/50 text-gold-300 text-xs font-medium tracking-widest uppercase">
+                        <span>🪷</span>
+                        <span>Wat-Pho-Heilkunst auf edler thailändischer Seide</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] tracking-tight text-white">
+                        Eine Symphonie aus <br class="hidden sm:inline">
+                        <span class="italic font-light text-gold-gradient">Seide, Wärme & Tradition</span>
+                    </h1>
+
+                    <p class="text-purple-100/85 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Tauchen Sie ein in eine Oase königlicher Entspannung in Berlin-Mitte. Meisterhafte Druckpunkttherapie, aromatische Kräuteressenzen und fließende Griffe auf handgewebtem Seidenkomfort bringen Körper und Geist in vollendeten Einklang.
+                    </p>
+
+                    <!-- Haute Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
+                        <button onclick="window.openBookingModal('trad-thai')" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-[#d4af37] via-[#f5d77f] to-[#d4af37] text-[#1a0326] font-cinzel font-bold text-xs uppercase tracking-[0.16em] shadow-[0_8px_30px_rgba(212,175,55,0.35)] hover:shadow-[0_12px_40px_rgba(212,175,55,0.5)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3">
+                            <span>✨ Wunschtermin online buchen</span>
+                        </button>
+                        <a href="#zeremonien" class="w-full sm:w-auto px-7 py-4 rounded-full bg-white/5 hover:bg-white/10 text-gold-200 text-xs uppercase tracking-[0.16em] font-medium border border-[#d4af37]/40 hover:border-[#d4af37] transition-all duration-300 text-center">
+                            Zeremonien & Preise entdecken
+                        </a>
+                    </div>
+
+                    <!-- Authentic Heritage Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-5 pt-8 border-t border-[#d4af37]/25 text-xs text-purple-200/90">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-5 h-5 rounded-full bg-[#440e5b] border border-[#d4af37]/60 flex items-center justify-center text-[10px] text-gold-400">✓</span>
+                            <span>Wat Pho Meisterzertifikat</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-5 h-5 rounded-full bg-[#440e5b] border border-[#d4af37]/60 flex items-center justify-center text-[10px] text-gold-400">✓</span>
+                            <span>Echtes Bio-Aromaöl aus Siam</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-5 h-5 rounded-full bg-[#440e5b] border border-[#d4af37]/60 flex items-center justify-center text-[10px] text-gold-400">✓</span>
+                            <span>Exklusive Einzelsuiten</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Hero Editorial Visual -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-[#d4af37]/50 bg-[#12021b]">
+                        
+                        <!-- Rich Spa Atmosphere Image -->
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85" 
+                             alt="Exklusive Thaimassage und Wellness Berlin" 
+                             class="w-full h-[460px] object-cover opacity-85 hover:scale-105 transition-transform duration-1000">
+
+                        <!-- Royal Silk Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#12021b] via-[#1a0326]/40 to-transparent flex flex-col justify-end p-8 text-white">
+                            <div class="inline-flex items-center gap-2 text-gold-300 text-[10px] uppercase tracking-[0.25em] font-medium mb-1">
+                                <span>✦</span> <span>Das Heiligtum der Sinne</span>
+                            </div>
+                            <h3 class="font-serif text-2xl font-normal text-white">Refugium der Stille & Eleganz</h3>
+                            <p class="text-xs text-purple-200/80 mt-1.5 font-light leading-relaxed">
+                                Gedämpftes Kerzenlicht, zarter Duft von frischem Lemongras und handgewebte Kissen aus königlicher Seide erwarten Sie.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Floating Personal Concierge Badge -->
+                    <div class="absolute -bottom-6 -left-4 sm:left-2 bg-[#1a0326]/95 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-[#d4af37]/50 flex items-center gap-3.5 max-w-xs cursor-pointer hover:border-[#d4af37] transition" onclick="document.getElementById('chat-toggle-btn').click()">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#440e5b] to-[#8324a8] text-[#f5d77f] flex items-center justify-center shrink-0 border border-[#d4af37]/60 shadow-md">
+                            🌸
+                        </div>
+                        <div>
+                            <div class="text-xs font-cinzel font-bold text-gold-300">Jasmin • Private Concierge</div>
+                            <div class="text-[11px] text-purple-200/80">Terminanfragen rund um die Uhr in Sekunden</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- The Art of Thai Silk & Heritage Section (Philosophie) -->
+    <section id="philosophie" class="py-24 bg-thai-silk relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Visual with Silk Frame -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/40 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Traditionelle Nuad Thai Zeremonie" class="w-full h-[400px] object-cover">
+                        <div class="absolute inset-0 bg-[#2d083e]/20"></div>
+                    </div>
+                    <!-- Decorative Golden Frame Accent -->
+                    <div class="hidden sm:block absolute -top-4 -left-4 w-28 h-28 border-t-2 border-l-2 border-[#d4af37]/80 rounded-tl-xl pointer-events-none"></div>
+                    <div class="hidden sm:block absolute -bottom-4 -right-4 w-28 h-28 border-b-2 border-r-2 border-[#d4af37]/80 rounded-br-xl pointer-events-none"></div>
+                </div>
+
+                <!-- Right Narrative Text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block text-xs font-cinzel font-semibold tracking-[0.25em] text-[#7a1f8d] uppercase">
+                        PHILOSOPHIE & KÖNIGLICHE HERKUNFT
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-normal text-[#1a0326] leading-tight">
+                        Die Heilsame Berührung der <span class="italic text-[#7a1f8d]">Königsseide</span>
+                    </h2>
+                    <p class="text-stone-700 text-sm sm:text-base leading-relaxed font-light">
+                        In der thailändischen Heilkunst gilt die Berührung nicht nur dem Muskelgewebe, sondern dem Energiefluss der <em>10 Sen-Linien</em>. Bei Siam Lotus wird jede Behandlung auf feinsten, atmungsaktiven Naturstoffen und handgefertigter thailändischer Seide zelebriert.
+                    </p>
+                    <p class="text-stone-700 text-sm sm:text-base leading-relaxed font-light">
+                        Unsere Therapeutinnen verinnerlichen die Jahrhunderte alten Lehren des <strong>Wat Pho Tempels in Bangkok</strong> — der Wiege des Nuad Thai, das von der UNESCO als immaterielles Kulturerbe der Menschheit ausgezeichnet wurde.
+                    </p>
+
+                    <!-- Feature Pillars -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-white/80 border border-[#d4af37]/30 shadow-xs">
+                            <h4 class="font-cinzel text-xs font-bold text-[#1a0326] uppercase tracking-wider mb-1">Authentische Wat-Pho-Linie</h4>
+                            <p class="text-[12px] text-stone-600 leading-normal">Gezielte Dehnungen und Druckpunkte ohne Hektik, angepasst an Ihre Tagesform.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/80 border border-[#d4af37]/30 shadow-xs">
+                            <h4 class="font-cinzel text-xs font-bold text-[#1a0326] uppercase tracking-wider mb-1">Erlesene Kräuter & Öle</h4>
+                            <p class="text-[12px] text-stone-600 leading-normal">Heißer Wasserdampf, Kurkuma, Plai-Ingwer und kaltgepresstes Bio-Mandelöl.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatment Ceremonies Menu Section (Zeremonien & Preise) -->
+    <section id="zeremonien" class="py-24 bg-[#1a0326] text-white relative border-y border-[#d4af37]/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            
+            <!-- Section Title Header -->
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <span class="text-xs font-cinzel font-semibold tracking-[0.3em] uppercase text-gold-400">DAS BEHANDLUNGSMENÜ</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-normal text-white">Exklusive Zeremonien & Massagen</h2>
+                <div class="hairline-gold w-32 mx-auto"></div>
+                <p class="text-purple-200/80 text-sm font-light max-w-xl mx-auto">
+                    Jedes Ritual beginnt mit einem reinigenden Kräuter-Fußbad und schließt mit frischem Bio-Jasmintee in unserer Ruhelounge ab.
+                </p>
+            </div>
+
+            <!-- Treatment Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Treatment 1: Nuad Thai -->
+                <div class="rounded-2xl p-7 bg-[#230533] border border-[#d4af37]/30 hover:border-[#d4af37] transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-[#440e5b] border border-[#d4af37]/50 text-gold-300 text-[10px] font-cinzel uppercase tracking-widest font-semibold">Der Klassiker</span>
+                            <span class="text-gold-400 text-lg">🪷</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-normal text-white group-hover:text-gold-300 transition-colors">Traditionelle Thaimassage</h3>
+                        <p class="text-xs text-purple-200/80 font-light leading-relaxed">
+                            Die authentische Ganzkörpermassage auf weicher Bodenmatte in bequemer Seidenbaumwoll-Kleidung. Befreit blockierte Energielinien, löst tiefste Muskelsteifheit und revitalisiert den Körper.
+                        </p>
+                        <div class="pt-3 border-t border-white/10 space-y-2 text-xs">
+                            <div class="flex justify-between text-purple-200"><span>60 Minuten</span><span class="font-cinzel font-bold text-gold-300">65 €</span></div>
+                            <div class="flex justify-between text-white font-medium bg-[#440e5b]/40 px-2 py-1 rounded"><span>90 Minuten (Empfohlen)</span><span class="font-cinzel font-bold text-gold-300">92 €</span></div>
+                            <div class="flex justify-between text-purple-200"><span>120 Minuten Intensiv</span><span class="font-cinzel font-bold text-gold-300">120 €</span></div>
+                        </div>
+                    </div>
+                    <button onclick="window.openBookingModal('trad-thai')" class="mt-7 w-full py-3 rounded-xl bg-[#340b49] hover:bg-[#d4af37] hover:text-[#1a0326] text-gold-300 text-xs font-cinzel font-semibold uppercase tracking-wider transition-all duration-300 border border-[#d4af37]/40 flex items-center justify-center gap-2">
+                        <span>Termin reservieren</span>
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Treatment 2: Aromaöl-Entspannung (Bestseller) -->
+                <div class="rounded-2xl p-7 bg-[#2d083e] border-2 border-[#d4af37] transition-all duration-300 flex flex-col justify-between relative group shadow-2xl hover:-translate-y-1">
+                    <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-[#d4af37] via-[#f5d77f] to-[#d4af37] text-[#1a0326] text-[10px] font-cinzel font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-md">
+                        Beliebteste Wahl
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-[#631484] border border-[#d4af37]/50 text-gold-200 text-[10px] font-cinzel uppercase tracking-widest font-semibold">Sinnliche Erholung</span>
+                            <span class="text-gold-400 text-lg">🌸</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-normal text-white group-hover:text-gold-300 transition-colors">Aromaöl-Entspannungsmassage</h3>
+                        <p class="text-xs text-purple-200/80 font-light leading-relaxed">
+                            Sanfte, fließende Streichbewegungen mit erwärmten biologischen ätherischen Ölen auf der Massageliege. Beruhigt das vegetative Nervensystem und nährt die Haut samtweich.
+                        </p>
+                        <div class="pt-3 border-t border-white/10 space-y-2 text-xs">
+                            <div class="flex justify-between text-purple-200"><span>60 Minuten</span><span class="font-cinzel font-bold text-gold-300">70 €</span></div>
+                            <div class="flex justify-between text-white font-medium bg-[#631484]/40 px-2 py-1 rounded"><span>90 Minuten (Bestseller)</span><span class="font-cinzel font-bold text-gold-300">98 €</span></div>
+                            <div class="flex justify-between text-purple-200"><span>120 Minuten Luxus</span><span class="font-cinzel font-bold text-gold-300">130 €</span></div>
+                        </div>
+                    </div>
+                    <button onclick="window.openBookingModal('aroma-oil')" class="mt-7 w-full py-3 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#f5d77f] hover:from-[#f5d77f] hover:to-[#d4af37] text-[#1a0326] text-xs font-cinzel font-bold uppercase tracking-wider transition-all duration-300 shadow-lg flex items-center justify-center gap-2">
+                        <span>Termin reservieren</span>
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Treatment 3: Rücken-, Schulter- & Nacken (Executive Relief) -->
+                <div class="rounded-2xl p-7 bg-[#230533] border border-[#d4af37]/30 hover:border-[#d4af37] transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-[#440e5b] border border-[#d4af37]/50 text-gold-300 text-[10px] font-cinzel uppercase tracking-widest font-semibold">Office Relief</span>
+                            <span class="text-gold-400 text-lg">🌿</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-normal text-white group-hover:text-gold-300 transition-colors">Rücken-, Schulter- & Nacken</h3>
+                        <p class="text-xs text-purple-200/80 font-light leading-relaxed">
+                            Gezielte Tiefenarbeit gegen typische Büro- und Bildschirmbeschwerden. Löst chronische Verhärtungen der Schulterblätter, des Nackens und beugt Spannungskopfschmerzen vor.
+                        </p>
+                        <div class="pt-3 border-t border-white/10 space-y-2 text-xs">
+                            <div class="flex justify-between text-purple-200"><span>30 Minuten Express</span><span class="font-cinzel font-bold text-gold-300">40 €</span></div>
+                            <div class="flex justify-between text-white font-medium bg-[#440e5b]/40 px-2 py-1 rounded"><span>60 Minuten Intensiv</span><span class="font-cinzel font-bold text-gold-300">65 €</span></div>
+                            <div class="flex justify-between text-purple-200"><span>90 Minuten Tiefenfokus</span><span class="font-cinzel font-bold text-gold-300">92 €</span></div>
+                        </div>
+                    </div>
+                    <button onclick="window.openBookingModal('back-neck')" class="mt-7 w-full py-3 rounded-xl bg-[#340b49] hover:bg-[#d4af37] hover:text-[#1a0326] text-gold-300 text-xs font-cinzel font-semibold uppercase tracking-wider transition-all duration-300 border border-[#d4af37]/40 flex items-center justify-center gap-2">
+                        <span>Termin reservieren</span>
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Treatment 4: Fußreflexzonen -->
+                <div class="rounded-2xl p-7 bg-[#230533] border border-[#d4af37]/30 hover:border-[#d4af37] transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-[#440e5b] border border-[#d4af37]/50 text-gold-300 text-[10px] font-cinzel uppercase tracking-widest font-semibold">Vitalisierend</span>
+                            <span class="text-gold-400 text-lg">🦶</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-normal text-white group-hover:text-gold-300 transition-colors">Fußreflexzonenmassage</h3>
+                        <p class="text-xs text-purple-200/80 font-light leading-relaxed">
+                            Stimulierende Akupressur der Reflexpunkte an Füßen und Waden unter Verwendung des traditionellen thailändischen Rosenholzstabs und belebendem Kräuterbalsam.
+                        </p>
+                        <div class="pt-3 border-t border-white/10 space-y-2 text-xs">
+                            <div class="flex justify-between text-purple-200"><span>30 Minuten</span><span class="font-cinzel font-bold text-gold-300">38 €</span></div>
+                            <div class="flex justify-between text-white font-medium bg-[#440e5b]/40 px-2 py-1 rounded"><span>60 Minuten Komplett</span><span class="font-cinzel font-bold text-gold-300">65 €</span></div>
+                        </div>
+                    </div>
+                    <button onclick="window.openBookingModal('foot-reflex')" class="mt-7 w-full py-3 rounded-xl bg-[#340b49] hover:bg-[#d4af37] hover:text-[#1a0326] text-gold-300 text-xs font-cinzel font-semibold uppercase tracking-wider transition-all duration-300 border border-[#d4af37]/40 flex items-center justify-center gap-2">
+                        <span>Termin reservieren</span>
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Treatment 5: Kräuterstempel (Luk Pra Kob) -->
+                <div class="rounded-2xl p-7 bg-[#230533] border border-[#d4af37]/30 hover:border-[#d4af37] transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-[#440e5b] border border-[#d4af37]/50 text-gold-300 text-[10px] font-cinzel uppercase tracking-widest font-semibold">Alte Heilkunde</span>
+                            <span class="text-gold-400 text-lg">🌾</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-normal text-white group-hover:text-gold-300 transition-colors">Kräuterstempelmassage</h3>
+                        <p class="text-xs text-purple-200/80 font-light leading-relaxed">
+                            Heiß gedämpfte Leinenbeutel (Luk Pra Kob), gefüllt mit thailändischem Berg-Ingwer, Tamarindenblättern und Kampfer. Die tief eindringende Wärme lindert Schmerzen und Entzündungen.
+                        </p>
+                        <div class="pt-3 border-t border-white/10 space-y-2 text-xs">
+                            <div class="flex justify-between text-purple-200"><span>60 Minuten</span><span class="font-cinzel font-bold text-gold-300">80 €</span></div>
+                            <div class="flex justify-between text-white font-medium bg-[#440e5b]/40 px-2 py-1 rounded"><span>90 Minuten Ausführlich</span><span class="font-cinzel font-bold text-gold-300">110 €</span></div>
+                        </div>
+                    </div>
+                    <button onclick="window.openBookingModal('herbal-stamp')" class="mt-7 w-full py-3 rounded-xl bg-[#340b49] hover:bg-[#d4af37] hover:text-[#1a0326] text-gold-300 text-xs font-cinzel font-semibold uppercase tracking-wider transition-all duration-300 border border-[#d4af37]/40 flex items-center justify-center gap-2">
+                        <span>Termin reservieren</span>
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Treatment 6: The Royal Silk Ritual (Signature Package) -->
+                <div class="rounded-2xl p-7 bg-gradient-to-br from-[#3b0951] via-[#1f042c] to-[#12021b] border border-[#d4af37] transition-all duration-300 flex flex-col justify-between group shadow-2xl hover:-translate-y-1 relative overflow-hidden">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-[#d4af37]/20 border border-[#d4af37] text-gold-300 text-[10px] font-cinzel uppercase tracking-widest font-semibold">Signature Ritual</span>
+                            <span class="text-gold-300 text-lg">👑</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-normal text-gold-300">The Royal Siam Silk Ritual</h3>
+                        <p class="text-xs text-purple-200/90 font-light leading-relaxed">
+                            Unsere erlesenste Zeremonie: Fußbad mit Jasminblüten, 60 Min. traditionelle Wat-Pho-Dehnung, gefolgt von 60 Min. warmer Aromaöl-Massage und heißer Kräuterstempel-Anwendung auf reiner Seide.
+                        </p>
+                        <div class="pt-3 border-t border-white/10 space-y-2 text-xs">
+                            <div class="flex justify-between text-white font-medium bg-[#440e5b]/70 px-3 py-2 rounded-lg border border-[#d4af37]/40">
+                                <span>120 Minuten Gesamtritual</span>
+                                <span class="font-cinzel font-bold text-gold-300 text-sm">145 €</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="window.openBookingModal('royal-silk')" class="mt-7 w-full py-3 rounded-xl bg-gradient-to-r from-[#d4af37] via-[#f5d77f] to-[#d4af37] text-[#1a0326] text-xs font-cinzel font-bold uppercase tracking-wider transition-all duration-300 shadow-md flex items-center justify-center gap-2">
+                        <span>Signature Ritual reservieren</span>
+                        <span>→</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- The Sanctuary Experience (Das Erlebnis) -->
+    <section id="erlebnis" class="py-24 bg-thai-silk">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-cinzel font-semibold tracking-[0.25em] text-[#7a1f8d] uppercase">DAS SIAM LOTUS ERLEBNIS</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-normal text-[#1a0326]">Verweilen in Vollendeter Harmonie</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="silk-card p-8 rounded-2xl space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-[#2d083e] text-[#f5d77f] flex items-center justify-center font-cinzel text-xl border border-[#d4af37]/50 shadow-md">
+                        I
+                    </div>
+                    <h3 class="font-serif text-2xl font-normal text-[#1a0326]">Privatsphäre & Seidenkomfort</h3>
+                    <p class="text-xs text-stone-600 leading-relaxed font-light">
+                        Keine Großraumkabinen. Jede Behandlung findet in liebevoll gestalteten Suiten mit warmem Holz, handgewebten Kissen und sanfter Akustik statt.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="silk-card p-8 rounded-2xl space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-[#2d083e] text-[#f5d77f] flex items-center justify-center font-cinzel text-xl border border-[#d4af37]/50 shadow-md">
+                        II
+                    </div>
+                    <h3 class="font-serif text-2xl font-normal text-[#1a0326]">Traditionelle Meisterinnen</h3>
+                    <p class="text-xs text-stone-600 leading-relaxed font-light">
+                        Unsere Therapeutinnen verfügen über langjährige Praxis in Thailand und stimmen die Druckstärke vor und während der Massage präzise auf Ihre Bedürfnisse ab.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="silk-card p-8 rounded-2xl space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-[#2d083e] text-[#f5d77f] flex items-center justify-center font-cinzel text-xl border border-[#d4af37]/50 shadow-md">
+                        III
+                    </div>
+                    <h3 class="font-serif text-2xl font-normal text-[#1a0326]">Haute Tee-Zeremonie</h3>
+                    <p class="text-xs text-stone-600 leading-relaxed font-light">
+                        Nach jeder Behandlung servieren wir Ihnen warmen Bael-Fruchttee und getrocknete thailändische Blüten in unserer beruhigenden Entspannungslounge.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Opening Hours (Lage & Salon) -->
+    <section id="kontakt" class="py-24 bg-[#12021b] text-white border-t border-[#d4af37]/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="bg-gradient-to-br from-[#1a0326] to-[#2d083e] rounded-3xl border border-[#d4af37]/40 p-8 sm:p-14 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-7">
+                    <div>
+                        <span class="text-xs font-cinzel font-semibold tracking-[0.25em] text-gold-400 uppercase">HERZLICH WILLKOMMEN</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-normal text-white mt-1">Lage & Öffnungszeiten</h2>
+                    </div>
+
+                    <div class="space-y-5 text-sm text-purple-100/90 font-light">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-[#440e5b] border border-[#d4af37]/50 flex items-center justify-center text-gold-300 shrink-0 text-sm mt-0.5">
+                                📍
+                            </div>
+                            <div>
+                                <strong class="block text-white font-cinzel font-semibold tracking-wider text-base">Siam Lotus Sanctuary</strong>
+                                <span class="text-purple-200">Friedrichstraße 185, 10117 Berlin (Mitte)</span>
+                                <div class="text-xs text-gold-400 mt-1">U-Bahn Stadtmitte (U2 / U6) • 2 Gehminuten</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-[#440e5b] border border-[#d4af37]/50 flex items-center justify-center text-gold-300 shrink-0 text-sm mt-0.5">
+                                🕒
+                            </div>
+                            <div>
+                                <strong class="block text-white font-cinzel font-semibold tracking-wider text-base">Öffnungszeiten</strong>
+                                <div class="grid grid-cols-2 gap-x-6 text-xs mt-1 text-purple-200">
+                                    <span>Montag – Samstag:</span>
+                                    <span class="font-semibold text-white">10:00 – 20:00 Uhr</span>
+                                    <span>Sonn- & Feiertage:</span>
+                                    <span class="font-semibold text-white">11:00 – 18:00 Uhr</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-[#440e5b] border border-[#d4af37]/50 flex items-center justify-center text-gold-300 shrink-0 text-sm mt-0.5">
+                                💳
+                            </div>
+                            <div>
+                                <strong class="block text-white font-cinzel font-semibold tracking-wider text-base">Zahlungsarten</strong>
+                                <div class="text-xs text-purple-200">Barzahlung, EC-Karte (Girocard), VISA, Mastercard, Apple Pay & Google Pay.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Quick Concierge Desk Box -->
+                <div class="bg-[#12021b]/80 rounded-2xl p-8 border border-[#d4af37]/50 flex flex-col justify-center items-center text-center space-y-5 shadow-inner">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-[#440e5b] to-[#8324a8] text-[#f5d77f] flex items-center justify-center text-2xl border-2 border-[#d4af37] shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                        🌸
+                    </div>
+                    <h3 class="font-serif text-2xl font-normal text-white">Persönliche Terminabsprache</h3>
+                    <p class="text-xs text-purple-200/80 max-w-sm font-light leading-relaxed">
+                        Nutzen Sie unseren diskreten Concierge-Chat für Terminanfragen in Deutsch, Englisch oder Thailändisch — ohne Warteschleife.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 w-full max-w-xs pt-2">
+                        <button onclick="window.openBookingModal('trad-thai')" class="flex-1 py-3 px-5 bg-gradient-to-r from-[#d4af37] via-[#f5d77f] to-[#d4af37] text-[#1a0326] rounded-xl text-xs font-cinzel font-bold uppercase tracking-wider transition-all duration-300 shadow-md">
+                            Termin buchen
+                        </button>
+                        <a href="tel:+493012345678" class="flex-1 py-3 px-5 bg-[#2d083e] hover:bg-[#440e5b] border border-[#d4af37]/60 text-gold-300 rounded-xl text-xs font-cinzel font-semibold uppercase tracking-wider transition-all text-center">
+                            Anrufen
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0c0112] text-purple-200/60 text-xs py-10 border-t border-[#d4af37]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <span class="font-cinzel text-sm font-bold text-gold-400">SIAM LOTUS</span>
+                <span class="text-stone-600">|</span>
+                <span>© 2026 Siam Lotus Wellness Berlin • Friedrichstraße 185, 10117 Berlin</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-6 text-[11px] text-purple-200/60">
+                <a href="/admin.html" class="hover:text-gold-300 text-gold-400 font-cinzel tracking-wider font-semibold transition flex items-center gap-1">
+                    <span>📋 Salon Management (จัดการคิว)</span>
+                </a>
+                <a href="#" class="hover:text-gold-300 transition">Impressum</a>
+                <a href="#" class="hover:text-gold-300 transition">Datenschutz</a>
+                <a href="#" class="hover:text-gold-300 transition">AGB & Stornierung</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================================== -->
+    <!-- FLOATING CONCIERGE WIDGET (Jasmin 🌸) - ROYAL PURPLE & GOLD SILK STYLING   -->
+    <!-- ========================================================================== -->
+
+    <!-- Floating Chat Trigger Button -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+        <!-- Floating tooltip preview badge -->
+        <div id="chat-notification-badge" class="hidden sm:flex items-center gap-2 bg-[#1a0326] text-gold-300 px-4 py-2.5 rounded-2xl shadow-2xl border border-[#d4af37]/70 text-xs font-cinzel font-medium cursor-pointer concierge-pulse" onclick="document.getElementById('chat-toggle-btn').click()">
+            <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+            <span>Online: <strong>Termin anfragen</strong></span>
+        </div>
+
+        <button id="chat-toggle-btn" class="w-14 h-14 rounded-full bg-gradient-to-tr from-[#1a0326] via-[#440e5b] to-[#7a1f8d] text-[#f5d77f] shadow-2xl hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 border-2 border-[#d4af37] concierge-pulse relative" aria-label="Termin Concierge öffnen">
+            <span class="text-2xl">🌸</span>
+            <span class="absolute -top-1 -right-1 w-4 h-4 bg-gold-400 border-2 border-[#1a0326] rounded-full"></span>
+        </button>
+    </div>
+
+    <!-- Chat Modal Window -->
+    <div id="chat-widget" class="hidden fixed bottom-6 right-4 sm:right-6 z-50 w-[94vw] sm:w-[430px] h-[600px] max-h-[86vh] bg-[#faf7f2] rounded-3xl shadow-[0_20px_60px_-15px_rgba(26,3,38,0.7)] border-2 border-[#d4af37]/60 flex-col overflow-hidden animate-fadeIn">
+        
+        <!-- Chat Header (Royal Purple Velvet & Gold) -->
+        <div class="bg-gradient-to-r from-[#12021b] via-[#2d083e] to-[#12021b] text-white p-4 px-5 flex items-center justify-between border-b border-[#d4af37]/40">
+            <div class="flex items-center gap-3.5">
+                <div class="relative">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#440e5b] to-[#8324a8] text-gold-300 flex items-center justify-center text-sm border border-[#d4af37] shadow-md">
+                        🌸
+                    </div>
+                    <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-gold-400 border-2 border-[#12021b] rounded-full"></span>
+                </div>
+                <div>
+                    <div class="text-xs font-cinzel font-bold text-gold-300 leading-tight tracking-wider">
+                        Jasmin 🌸
+                    </div>
+                    <div class="text-[10px] text-purple-200/90 font-light">
+                        Spa Concierge • Siam Lotus Berlin
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-1.5">
+                <!-- Language Selector -->
+                <div class="flex items-center bg-[#1a0326] rounded-lg p-0.5 text-[10px] mr-1 border border-[#d4af37]/40">
+                    <button onclick="window.setChatLanguage('de')" class="px-1.5 py-0.5 hover:text-gold-300 transition text-gold-400 font-bold" title="Deutsch">DE</button>
+                    <span class="text-stone-600">|</span>
+                    <button onclick="window.setChatLanguage('en')" class="px-1.5 py-0.5 hover:text-gold-300 transition text-stone-400" title="English">EN</button>
+                    <span class="text-stone-600">|</span>
+                    <button onclick="window.setChatLanguage('th')" class="px-1.5 py-0.5 hover:text-gold-300 transition text-stone-400" title="ไทย">TH</button>
+                </div>
+                <!-- Reset Chat -->
+                <button id="chat-reset-btn" title="Neu starten" class="p-1.5 text-purple-200 hover:text-white rounded-lg hover:bg-white/10 transition text-xs">
+                    🔄
+                </button>
+                <!-- Close Chat -->
+                <button id="chat-close-btn" title="Schließen" class="p-1.5 text-purple-200 hover:text-white rounded-lg hover:bg-white/10 transition text-base">
+                    ✕
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Messages Container -->
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 bg-[#faf7f2] text-xs">
+            <!-- Messages are injected here via chatbot.js -->
+        </div>
+
+        <!-- Quick Suggestions Pill Bar -->
+        <div class="bg-[#f3ece4] px-3.5 py-2 border-t border-[#d4af37]/30 flex gap-2 overflow-x-auto text-[11px] no-scrollbar">
+            <button onclick="document.getElementById('chat-input').value='Was empfehlen Sie bei Nackenschmerzen?'; document.getElementById('chat-send-btn').click();" class="shrink-0 px-3 py-1 bg-white hover:bg-[#2d083e] hover:text-gold-300 text-[#281a2e] rounded-full border border-[#d4af37]/40 shadow-xs transition">
+                💆‍♂️ Nackenschmerzen (DE)
+            </button>
+            <button onclick="document.getElementById('chat-input').value='ปวดหลังมาก ควรนวดแบบไหนดีคะ'; document.getElementById('chat-send-btn').click();" class="shrink-0 px-3 py-1 bg-white hover:bg-[#2d083e] hover:text-gold-300 text-[#281a2e] rounded-full border border-[#d4af37]/40 shadow-xs transition">
+                🇹🇭 ปวดหลัง แนะนำแบบไหน
+            </button>
+            <button onclick="document.getElementById('chat-input').value='What massages do you offer in Berlin?'; document.getElementById('chat-send-btn').click();" class="shrink-0 px-3 py-1 bg-white hover:bg-[#2d083e] hover:text-gold-300 text-[#281a2e] rounded-full border border-[#d4af37]/40 shadow-xs transition">
+                🇬🇧 Services & Prices (EN)
+            </button>
+            <button onclick="document.getElementById('chat-input').value='Termin buchen'; document.getElementById('chat-send-btn').click();" class="shrink-0 px-3 py-1 bg-white hover:bg-[#2d083e] hover:text-gold-300 text-[#281a2e] rounded-full border border-[#d4af37]/40 shadow-xs transition">
+                📅 Termin anfragen
+            </button>
+        </div>
+
+        <!-- Input Bar -->
+        <div class="p-3 bg-white border-t border-[#d4af37]/30 flex items-center gap-2">
+            <input type="text" id="chat-input" placeholder="Nachricht an Jasmin schreiben..." class="flex-1 px-3.5 py-2.5 text-xs rounded-xl bg-[#faf7f2] border border-[#d4af37]/40 focus:outline-none focus:border-[#440e5b] focus:bg-white transition text-[#1a0326] placeholder-stone-400">
+            <button id="chat-send-btn" class="p-2.5 bg-gradient-to-tr from-[#2d083e] to-[#5e176f] hover:from-[#440e5b] hover:to-[#7a1f8d] text-[#f5d77f] rounded-xl shadow-md transition active:scale-95 border border-[#d4af37]/50" title="Senden">
+                <svg class="w-4 h-4 transform rotate-90" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                </svg>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- ========================================================================== -->
+    <!-- INTERACTIVE BOOKING MODAL (Haute Thai Silk 5-Step Flow)                    -->
+    <!-- ========================================================================== -->
+    <div id="booking-modal" class="hidden fixed inset-0 z-50 bg-[#0a0110]/85 backdrop-blur-md items-center justify-center p-3 sm:p-6 animate-fadeIn">
+        <div class="bg-gradient-to-b from-[#1a0326] via-[#240635] to-[#12021b] border-2 border-gold-500/60 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.9)] relative text-white max-h-[92vh] flex flex-col overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between border-b border-gold-500/30 pb-4 mb-4 shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full bg-royal-700 border border-gold-500/50 flex items-center justify-center text-sm text-gold-400">
+                        🌸
+                    </div>
+                    <div>
+                        <h2 class="font-cinzel text-base font-bold text-gold-300 tracking-wider">ONLINE TERMINBUCHUNG</h2>
+                        <p class="text-[10px] text-purple-200/70 font-light">Siam Lotus Sanctuary Berlin • Sofortige Bestätigung</p>
+                    </div>
+                </div>
+                <button onclick="window.closeBookingModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-stone-300 hover:text-white transition text-sm">
+                    ✕
+                </button>
+            </div>
+
+            <!-- Step Indicator -->
+            <div id="booking-step-indicator" class="shrink-0"></div>
+
+            <!-- Step Body Dynamic Content -->
+            <div id="booking-modal-body" class="flex-1 overflow-y-auto pr-1"></div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="services.js"></script>
+    <script src="booking.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

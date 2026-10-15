@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siam Lotus | Salon Owner Dashboard (ระบบจัดการคิว)</title>
+    <!-- Fonts & Tailwind -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cinzel: ['"Cinzel"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        royal: {
+                            950: '#12021b',
+                            900: '#1a0326',
+                            800: '#2d083e',
+                            700: '#440e5b',
+                        },
+                        gold: {
+                            400: '#dfb54d',
+                            500: '#d4af37',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#12021b] text-purple-100 min-h-screen font-sans">
+
+    <!-- Top Navigation -->
+    <header class="bg-[#1a0326] border-b border-gold-500/30 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-royal-700 border border-gold-500/60 flex items-center justify-center text-lg text-gold-400">
+                🌸
+            </div>
+            <div>
+                <h1 class="font-cinzel text-lg font-bold text-gold-400 tracking-wider">SIAM LOTUS BERLIN</h1>
+                <p class="text-[11px] text-purple-200/70">Salon Management & Live Booking Feed (ระบบจัดการคิวร้าน)</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <a href="/" class="px-4 py-2 bg-white/5 hover:bg-white/10 text-xs font-cinzel tracking-wider rounded-xl border border-white/20 transition">
+                ← Zurück zur Website
+            </a>
+            <button onclick="fetchBookings()" class="px-4 py-2 bg-royal-700 hover:bg-royal-800 text-gold-300 text-xs font-cinzel tracking-wider rounded-xl border border-gold-500/40 transition flex items-center gap-1.5 shadow-md">
+                <span>🔄 Aktualisieren</span>
+            </button>
+            <a href="/bookings.csv" download class="px-4 py-2 bg-gradient-to-r from-gold-500 to-gold-400 text-royal-950 text-xs font-cinzel font-bold tracking-wider rounded-xl shadow-md transition">
+                📥 CSV Export
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto p-6 space-y-6">
+
+        <!-- Metrics Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div class="bg-[#1a0326] border border-gold-500/30 rounded-2xl p-5 shadow-xl flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-cinzel text-stone-400 uppercase tracking-wider">Termine Gesamt</span>
+                    <div id="stat-total" class="text-3xl font-bold text-white mt-1">0</div>
+                </div>
+                <div class="w-12 h-12 rounded-xl bg-royal-800 flex items-center justify-center text-2xl text-gold-400">
+                    📅
+                </div>
+            </div>
+
+            <div class="bg-[#1a0326] border border-gold-500/30 rounded-2xl p-5 shadow-xl flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-cinzel text-stone-400 uppercase tracking-wider">Bestätigt (Aktiv)</span>
+                    <div id="stat-active" class="text-3xl font-bold text-green-400 mt-1">0</div>
+                </div>
+                <div class="w-12 h-12 rounded-xl bg-royal-800 flex items-center justify-center text-2xl text-green-400">
+                    ✓
+                </div>
+            </div>
+
+            <div class="bg-[#1a0326] border border-gold-500/30 rounded-2xl p-5 shadow-xl flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-cinzel text-stone-400 uppercase tracking-wider">Umsatzpotenzial</span>
+                    <div id="stat-revenue" class="text-3xl font-bold text-gold-400 mt-1">0 €</div>
+                </div>
+                <div class="w-12 h-12 rounded-xl bg-royal-800 flex items-center justify-center text-2xl text-gold-400">
+                    💳
+                </div>
+            </div>
+        </div>
+
+        <!-- Bookings Table Container -->
+        <div class="bg-[#1a0326] border border-gold-500/30 rounded-2xl shadow-xl overflow-hidden">
+            <div class="p-5 border-b border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                <div>
+                    <h2 class="font-cinzel text-base font-bold text-white">Eingegangene Reservierungen</h2>
+                    <p class="text-xs text-purple-200/70">Wird automatisch in bookings.json und bookings.csv gespeichert</p>
+                </div>
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-stone-300">Live Localhost Server verbunden</span>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                    <thead class="bg-[#240635] text-purple-200 uppercase font-cinzel text-[10px] tracking-wider border-b border-white/10">
+                        <tr>
+                            <th class="py-3.5 px-4">ID</th>
+                            <th class="py-3.5 px-4">Datum & Uhrzeit</th>
+                            <th class="py-3.5 px-4">Kunde / Telefon</th>
+                            <th class="py-3.5 px-4">Behandlung & Dauer</th>
+                            <th class="py-3.5 px-4">Preis</th>
+                            <th class="py-3.5 px-4">Notizen / Wünsche</th>
+                            <th class="py-3.5 px-4">Kanal</th>
+                            <th class="py-3.5 px-4">Status</th>
+                            <th class="py-3.5 px-4 text-right">Aktion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookings-table-body" class="divide-y divide-white/5 text-purple-100">
+                        <tr>
+                            <td colspan="9" class="py-8 text-center text-stone-400">
+                                Lade Termine...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        async function fetchBookings() {
+            try {
+                const res = await fetch("/api/bookings");
+                const data = await res.json();
+                renderBookings(data.bookings || []);
+            } catch (err) {
+                console.error("Fehler beim Laden der Buchungen:", err);
+            }
+        }
+
+        function renderBookings(list) {
+            const tbody = document.getElementById("bookings-table-body");
+            const statTotal = document.getElementById("stat-total");
+            const statActive = document.getElementById("stat-active");
+            const statRevenue = document.getElementById("stat-revenue");
+
+            statTotal.innerText = list.length;
+            const activeList = list.filter(b => b.status !== "cancelled");
+            statActive.innerText = activeList.length;
+            
+            const totalRev = activeList.reduce((sum, b) => sum + (Number(b.price) || 0), 0);
+            statRevenue.innerText = totalRev + " €";
+
+            if (!list || list.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="9" class="py-12 text-center text-stone-400">
+                            Noch keine Buchungen vorhanden. Führen Sie eine Testbuchung auf der Website durch!
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            let html = "";
+            list.forEach(b => {
+                const isCancelled = b.status === "cancelled";
+                html += `
+                    <tr class="hover:bg-white/5 transition ${isCancelled ? 'opacity-50' : ''}">
+                        <td class="py-3.5 px-4 font-mono font-bold text-gold-400">${b.id}</td>
+                        <td class="py-3.5 px-4">
+                            <div class="font-semibold text-white">${b.date || '-'}</div>
+                            <div class="text-[11px] text-stone-400">${b.time || '-'} Uhr</div>
+                        </td>
+                        <td class="py-3.5 px-4">
+                            <div class="font-semibold text-white">${escapeHTML(b.customerName)}</div>
+                            <a href="tel:${b.customerPhone}" class="text-[11px] text-gold-400 hover:underline">📞 ${escapeHTML(b.customerPhone)}</a>
+                        </td>
+                        <td class="py-3.5 px-4">
+                            <div class="text-white">${escapeHTML(b.serviceName)}</div>
+                            <div class="text-[11px] text-stone-400">${b.duration} Min</div>
+                        </td>
+                        <td class="py-3.5 px-4 font-bold text-gold-400 font-serif text-sm">${b.price} €</td>
+                        <td class="py-3.5 px-4 text-stone-300 text-[11px] max-w-xs truncate" title="${escapeHTML(b.notes || '')}">
+                            ${escapeHTML(b.notes) || '-'}
+                        </td>
+                        <td class="py-3.5 px-4">
+                            <span class="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-stone-300">
+                                ${escapeHTML(b.source || 'Web')}
+                            </span>
+                        </td>
+                        <td class="py-3.5 px-4">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${isCancelled ? 'bg-red-500/20 text-red-300 border border-red-500/40' : 'bg-green-500/20 text-green-300 border border-green-500/40'}">
+                                ${isCancelled ? 'Storniert' : 'Bestätigt'}
+                            </span>
+                        </td>
+                        <td class="py-3.5 px-4 text-right">
+                            ${!isCancelled ? `
+                                <button onclick="cancelBooking('${b.id}')" class="px-2.5 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/40 text-red-300 text-[11px] border border-red-500/30 transition">
+                                    Stornieren
+                                </button>
+                            ` : `<span class="text-stone-500 text-[11px]">-</span>`}
+                        </td>
+                    </tr>
+                `;
+            });
+            tbody.innerHTML = html;
+        }
+
+        async function cancelBooking(id) {
+            if (!confirm(`Buchung ${id} wirklich stornieren?`)) return;
+            try {
+                const res = await fetch("/api/bookings/cancel", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ id })
+                });
+                if (res.ok) {
+                    fetchBookings();
+                }
+            } catch (err) {
+                alert("Fehler beim Stornieren: " + err);
+            }
+        }
+
+        function escapeHTML(str) {
+            if (!str) return "";
+            return String(str).replace(/[&<>'"]/g, tag => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                "'": "&#39;",
+                "\"": "&quot;"
+            }[tag] || tag));
+        }
+
+        // Auto-refresh every 10 seconds
+        fetchBookings();
+        setInterval(fetchBookings, 10000);
+    </script>
+</body>
+</html>

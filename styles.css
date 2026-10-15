@@ -1,0 +1,187 @@
+/* ==========================================================================
+   SIAM LOTUS BERLIN - HAUTE WELLNESS & THAI SILK LUXURY STYLING
+   Royal Thai Purple & Champagne Gold Silk Aesthetic
+   ========================================================================== */
+
+/* Custom Typography Import */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    --silk-deep-purple: #1a0326;
+    --silk-royal-violet: #2d083e;
+    --silk-plum: #440e5b;
+    --silk-magenta-dark: #631484;
+    --silk-orchid: #8324a8;
+    --silk-gold-leaf: #d4af37;
+    --silk-gold-bright: #f5d77f;
+    --silk-gold-champagne: #ecd089;
+    --silk-cream: #faf7f2;
+    --silk-pearl: #f3ece4;
+    --silk-sand: #e8dccf;
+    --silk-charcoal: #14041a;
+}
+
+/* Base Smooth Scrolling & Fonts */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--silk-cream);
+    color: #2b182e;
+}
+
+.font-serif-luxury {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-cinzel {
+    font-family: 'Cinzel', serif;
+}
+
+/* ==========================================================================
+   THAI SILK WEAVE TEXTURE & LUSTER GRADIENTS (ผ้าไหมไทย)
+   ========================================================================== */
+
+/* Subtle Handwoven Thai Silk Canvas Pattern (Warp & Weft effect) */
+.bg-thai-silk {
+    background-color: #faf7f2;
+    background-image: 
+        radial-gradient(ellipse at 50% 20%, rgba(131, 36, 168, 0.04) 0%, transparent 60%),
+        linear-gradient(45deg, rgba(212, 175, 55, 0.03) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(212, 175, 55, 0.03) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(68, 14, 91, 0.02) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(68, 14, 91, 0.02) 75%);
+    background-size: 100% 100%, 8px 8px, 8px 8px, 8px 8px, 8px 8px;
+    background-position: 0 0, 0 0, 4px 0, 4px -4px, 0 4px;
+}
+
+/* Deep Royal Purple Silk Weave for Dark / Luxury Sections */
+.bg-thai-silk-dark {
+    background-color: #1a0326;
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(131, 36, 168, 0.25) 0%, transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.015) 1px, transparent 1px, transparent 3px),
+        repeating-linear-gradient(90deg, rgba(212, 175, 55, 0.02), rgba(212, 175, 55, 0.02) 1px, transparent 1px, transparent 3px);
+}
+
+/* Iridescent Silk Shimmer Effect */
+.silk-shimmer {
+    background: linear-gradient(135deg, #2d083e 0%, #440e5b 45%, #631484 70%, #2d083e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.silk-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        115deg,
+        transparent 0%,
+        rgba(245, 215, 127, 0.08) 35%,
+        rgba(255, 255, 255, 0.18) 50%,
+        rgba(245, 215, 127, 0.08) 65%,
+        transparent 100%
+    );
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Thai Traditional Lotus / Lai Thai Gold Filigree Border */
+.border-gold-foil {
+    border-color: rgba(212, 175, 55, 0.45);
+}
+
+.border-gold-gradient {
+    border-image: linear-gradient(to right, #d4af37, #f5d77f, #d4af37) 1;
+}
+
+/* Gold Text Gradient */
+.text-gold-gradient {
+    background: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #aa8420 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gold-silk {
+    color: #d4af37;
+}
+
+/* Silk Card Hover Elevation */
+.silk-card {
+    background: #ffffff;
+    border: 1px solid rgba(131, 36, 168, 0.12);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.silk-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 16px 36px -12px rgba(68, 14, 91, 0.18), 0 0 0 1px rgba(212, 175, 55, 0.35);
+}
+
+/* Fine Golden Hairline Divider */
+.hairline-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+/* ==========================================================================
+   CONCIERGE / CHATBOT WIDGET STYLING
+   ========================================================================== */
+
+/* Custom Scrollbar */
+#chat-messages::-webkit-scrollbar {
+    width: 4px;
+}
+#chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+#chat-messages::-webkit-scrollbar-thumb {
+    background-color: rgba(68, 14, 91, 0.2);
+    border-radius: 9999px;
+}
+#chat-messages::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(212, 175, 55, 0.6);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Concierge Pulse Glow */
+@keyframes conciergePulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5), 0 10px 25px -5px rgba(45, 8, 62, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 0 14px rgba(212, 175, 55, 0), 0 15px 35px -5px rgba(68, 14, 91, 0.8);
+    }
+}
+
+.concierge-pulse {
+    animation: conciergePulse 3s infinite ease-in-out;
+}
+
+/* Glassmorphism Luxury Panel */
+.glass-luxury {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}

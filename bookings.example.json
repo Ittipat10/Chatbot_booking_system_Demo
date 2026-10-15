@@ -1,0 +1,18 @@
+[
+  {
+    "id": "SL-DEMO01",
+    "createdAt": "2026-10-14 10:00:00",
+    "customerName": "Demo Guest",
+    "customerPhone": "+49 170 0000000",
+    "customerEmail": "guest@example.com",
+    "serviceId": "trad-thai",
+    "serviceName": "Traditionelle Thaimassage (Nuad Thai)",
+    "duration": 90,
+    "price": 92,
+    "date": "2026-10-16",
+    "time": "14:30",
+    "notes": "Ausgewogener Druck",
+    "source": "Website Booking Modal",
+    "status": "confirmed"
+  }
+]
